@@ -17,11 +17,11 @@ class chatbook:
            self.signup()
         elif user_input == "2":
             self.signin()
-            pass
+            
         elif user_input == "3":
-            pass
+            self.mypost()
         elif user_input == "4":
-            pass
+            self.sentmsg()
         else:
             exit()
 
@@ -47,7 +47,27 @@ class chatbook:
                 print("invalid credentials")
         print("\n")
         self.menu()
+    def mypost(self):
+        if self.loggedin==True:
+            txt =input("enter your message here ")
+            print(f"following content has bean posted {txt}")
 
+        else:
+            print("please login to post a message")
+        print("\n")
+        self.menu()
+    
+    def sentmsg(self):
+         if self.loggedin==True:
+            txt =input("enter your message here ")
+            friend=input("whom do you want to send msg")
+            print(f"your msg has been sent to {friend}")
+        
+
+         else:
+            print("please login to send a message")
+         print("\n")
+         self.menu()
 
 
 obj = chatbook()
